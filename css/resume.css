@@ -88,7 +88,16 @@ p.lead {
   color: #BD5D38;
 }
 
+.mb-0 {
+  color: #868e96;
+}
+
+h2.mb-5 {
+  color: #868e968f;
+}
+
 nav {
+  background-color: #272822;
   background-image: url("../img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -132,7 +141,7 @@ nav {
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    border: 0.3rem solid rgba(255, 255, 255, 0.2);
     margin-left: 1rem !important;
   }
   #sideNav .navbar-collapse {
