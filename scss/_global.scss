@@ -13,10 +13,6 @@ body {
   }
 }
 
-a:focus {
-  outline: none;
-}
-
 h1,
 h2,
 h3,
@@ -57,6 +53,7 @@ p.lead {
 .social-icons {
   a {
     display: inline-block;
+    position: relative;
     height: 3.5rem;
     width: 3.5rem;
     background-color: $gray-700;
@@ -66,11 +63,39 @@ p.lead {
     font-size: 1.5rem;
     line-height: 3.5rem;
     margin-right: 1rem;
+    transition: 0.5s;
+
     &:last-child {
       margin-right: 0;
     }
+
+    &:before {
+      content:"";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: lighten($orange, 10%);
+      border-radius: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 3.5rem;
+      margin-right: 1rem;
+      transition: 0.5s;
+      transform: scale(0.9);
+      z-index: -1;
+    }
+
+    &:hover::before {
+      transform: scale(1.1);
+      box-shadow: 0 0 1rem lighten($orange, 10%);
+      }
+
     &:hover {
-      background-color: $primary;
+      color: lighten($orange, 10%) !important;
+      box-shadow: 0 0 5px lighten($orange, 10%) !important;
+      text-shadow: 0 0 5px lighten($orange, 10%) !important;
     }
   }
 }

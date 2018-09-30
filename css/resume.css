@@ -18,10 +18,6 @@ body {
   }
 }
 
-a:focus {
-  outline: none;
-}
-
 h1,
 h2,
 h3,
@@ -61,6 +57,7 @@ p.lead {
 
 .social-icons a {
   display: inline-block;
+  position: relative;
   height: 3.5rem;
   width: 3.5rem;
   background-color: #495057;
@@ -70,14 +67,46 @@ p.lead {
   font-size: 1.5rem;
   line-height: 3.5rem;
   margin-right: 1rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .social-icons a:last-child {
   margin-right: 0;
 }
 
+.social-icons a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ce7a5a;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  margin-right: 1rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  z-index: -1;
+}
+
+.social-icons a:hover::before {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-box-shadow: 0 0 1rem #ce7a5a;
+  box-shadow: 0 0 1rem #ce7a5a;
+}
+
 .social-icons a:hover {
-  background-color: #BD5D38;
+  color: #ce7a5a !important;
+  -webkit-box-shadow: 0 0 5px #ce7a5a !important;
+  box-shadow: 0 0 5px #ce7a5a !important;
+  text-shadow: 0 0 5px #ce7a5a !important;
 }
 
 .dev-icons {
